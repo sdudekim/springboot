@@ -43,6 +43,4 @@ public class MemberController {
 
         return "/members/memberList";
     }
-
-
 }
