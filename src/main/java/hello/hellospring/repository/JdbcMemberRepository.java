@@ -20,11 +20,9 @@ public class JdbcMemberRepository implements MemberRepository{
     @Override
     public Member save(Member member) {
         String sql = "insert into member(name) values(?)";
-
         Connection connection = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-
         try {
             connection = getConnection();
             pstmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -42,7 +40,6 @@ public class JdbcMemberRepository implements MemberRepository{
         } finally {
             close(connection, pstmt, rs);
         }
-
         return member;
     }
 
