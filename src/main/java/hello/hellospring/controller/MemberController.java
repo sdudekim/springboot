@@ -22,7 +22,7 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String  createForm(){
-        return "/members/createMemberForm";
+        return "members/createMemberForm";
     }
 
     @PostMapping("/members/new")
@@ -41,6 +41,6 @@ public class MemberController {
 
         model.addAttribute("members", members);
 
-        return "/members/memberList";
+        return "members/memberList";
     }
 }
